@@ -1,0 +1,59 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  # ── CI：代码语法检查 ──────────────────────────────────
+  ci:
+    name: CI - Python Syntax Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Check Python syntax
+        run: |
+          python3 -m py_compile mapper.py
+          python3 -m py_compile reducer.py
+          python3 -m py_compile fetch_arxiv.py
+          python3 -m py_compile visualize.py
+          echo "All Python files passed syntax check"
+
+      - name: Verify Dockerfile exists
+        run: test -f Dockerfile && echo "Dockerfile found" || exit 1
+
+  # ── CD：自动部署到阿里云 ECS ─────────────────────────
+  cd:
+    name: CD - Deploy to Alibaba Cloud ECS
+    runs-on: ubuntu-latest
+    needs: ci
+    steps:
+      - name: SSH deploy to ECS
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.ECS_HOST }}
+          username: ${{ secrets.ECS_USERNAME }}
+          key: ${{ secrets.ECS_SSH_KEY }}
+          script: |
+            echo "=== Pulling latest code ==="
+            cd /root/arxiv-analysis
+            git pull origin main
+
+            echo "=== Rebuilding Docker image ==="
+            docker stop arxiv-web 2>/dev/null || true
+            docker rm   arxiv-web 2>/dev/null || true
+            docker build -t arxiv-viz .
+
+            echo "=== Starting new container ==="
+            docker run -d -p 8080:80 --name arxiv-web arxiv-viz
+
+            echo "=== Deployment complete: $(date) ==="
+            docker ps --filter name=arxiv-web
