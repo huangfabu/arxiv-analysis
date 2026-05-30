@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Paper Keyword Trend Analysis (2012-2026)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; color: #333; }
+  .header {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: white; padding: 48px 24px; text-align: center;
+  }
+  .header h1 { font-size: 1.9em; font-weight: 600; margin-bottom: 10px; }
+  .header .subtitle { opacity: 0.75; font-size: 0.95em; line-height: 1.8; }
+  .badge {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3); border-radius: 20px;
+    padding: 4px 14px; font-size: 0.8em; margin: 4px 4px 0;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+  .stats-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 16px; margin-bottom: 28px;
+  }
+  .stat { background: white; border-radius: 10px; padding: 18px;
+    text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  .stat .num { font-size: 1.9em; font-weight: 700; color: #0f3460; }
+  .stat .lbl { color: #888; font-size: 0.82em; margin-top: 5px; }
+  .pipeline {
+    background: white; border-radius: 12px; padding: 22px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 28px;
+  }
+  .pipeline h2 { font-size: 1em; color: #555; margin-bottom: 14px;
+    border-left: 3px solid #0f3460; padding-left: 10px; }
+  .steps { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .step {
+    background: #0f3460; color: white; padding: 7px 14px;
+    border-radius: 6px; font-size: 0.82em;
+  }
+  .arr { color: #aaa; font-size: 1.1em; }
+  .section-title {
+    font-size: 1.1em; font-weight: 600; color: #1a1a2e;
+    margin: 0 0 16px; border-left: 4px solid #0f3460; padding-left: 12px;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .card {
+    background: white; border-radius: 12px; padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  }
+  .card.wide { grid-column: 1 / -1; }
+  .card h3 {
+    font-size: 0.9em; color: #555; margin-bottom: 12px;
+    padding-bottom: 8px; border-bottom: 1px solid #f0f0f0;
+  }
+  .card img { width: 100%; border-radius: 6px; display: block; }
+  .finding {
+    background: #e8f4fd; border-left: 4px solid #185FA5;
+    border-radius: 0 8px 8px 0; padding: 12px 16px;
+    font-size: 0.88em; color: #333; line-height: 1.7; margin-top: 12px;
+  }
+  .footer {
+    background: #1a1a2e; color: #888; text-align: center;
+    padding: 22px; font-size: 0.82em; line-height: 1.8; margin-top: 10px;
+  }
+  @media (max-width: 700px) {
+    .grid { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .header h1 { font-size: 1.3em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>AI Paper Keyword Trend Analysis (2012–2026)</h1>
+  <div class="subtitle">
+    Based on arXiv Dataset &nbsp;|&nbsp; MapReduce Distributed Computing on Alibaba Cloud ECS<br>
+    <span class="badge">Hadoop 3.4.0</span>
+    <span class="badge">HDFS</span>
+    <span class="badge">YARN</span>
+    <span class="badge">Python Streaming</span>
+    <span class="badge">Docker + Nginx</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="stats-bar">
+    <div class="stat"><div class="num">5</div><div class="lbl">AI Categories</div></div>
+    <div class="stat"><div class="num">15</div><div class="lbl">Years (2012–2026)</div></div>
+    <div class="stat"><div class="num">104,464</div><div class="lbl">Word-Year Records</div></div>
+    <div class="stat"><div class="num">4</div><div class="lbl">Visualizations</div></div>
+  </div>
+
+  <div class="pipeline">
+    <h2>End-to-End Data Processing Pipeline</h2>
+    <div class="steps">
+      <span class="step">arXiv API</span><span class="arr">→</span>
+      <span class="step">HDFS Upload</span><span class="arr">→</span>
+      <span class="step">MapReduce / YARN</span><span class="arr">→</span>
+      <span class="step">HDFS Output</span><span class="arr">→</span>
+      <span class="step">Python Visualization</span><span class="arr">→</span>
+      <span class="step">Docker + Nginx</span>
+    </div>
+  </div>
+
+  <p class="section-title">Analysis Results</p>
+
+  <div class="grid">
+    <div class="card wide">
+      <h3>Fig.2 &nbsp; Evolution of Key AI Research Topics (2012–2026) — Core Finding</h3>
+      <img src="charts/fig2_trend_keywords.png" alt="AI keyword trend">
+      <div class="finding">
+        Key observations: <b>convolutional</b> networks dominated 2014–2016 (CNN era) →
+        <b>recurrent</b> / LSTM peaked 2016–2018 (RNN era) →
+        <b>attention</b> & <b>transformer</b> rose sharply from 2018 (Attention is All You Need) →
+        <b>diffusion</b> models exploded in 2021–2022 (Stable Diffusion era) →
+        <b>multimodal</b> & <b>generative</b> continue climbing through 2025–2026.
+      </div>
+    </div>
+    <div class="card">
+      <h3>Fig.1 &nbsp; Top 30 Keywords Overall (2012–2026)</h3>
+      <img src="charts/fig1_top30_overall.png" alt="Top 30 keywords">
+    </div>
+    <div class="card">
+      <h3>Fig.3 &nbsp; Hot Keywords in Recent 3 Years (2023–2026)</h3>
+      <img src="charts/fig3_recent_top20.png" alt="Recent hot keywords">
+    </div>
+    <div class="card wide">
+      <h3>Fig.4 &nbsp; Word Cloud of AI Research Keywords (2020–2026)</h3>
+      <img src="charts/fig4_wordcloud.png" alt="Word cloud">
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Cloud Computing Big Assignment &nbsp;·&nbsp; Jiangnan University &nbsp;·&nbsp; College of AI and Computer Science<br>
+  Student: 单义凯 &nbsp;|&nbsp; ID: 1190224121 &nbsp;|&nbsp; Class: AI 2401 &nbsp;|&nbsp; May 2026<br>
+  Deployed on Alibaba Cloud ECS · Docker Container · Nginx
+</div>
+
+</body>
+</html>
