@@ -4,3 +4,4 @@ charts/
 web/charts/
 __pycache__/
 *.pyc
+/arxiv_operation_guidance.md
