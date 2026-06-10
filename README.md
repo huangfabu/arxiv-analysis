@@ -5,6 +5,8 @@ Cloud Computing Big Assignment — Jiangnan University, AI 2401
 ## Overview
 Distributed keyword frequency analysis on arXiv AI papers using Hadoop MapReduce on Alibaba Cloud ECS.
 
+![web](./docs/image.png)
+
 ## Tech Stack
 - Hadoop 3.4.0 (HDFS + YARN + MapReduce)
 - Python Streaming (mapper.py / reducer.py)
@@ -18,6 +20,3 @@ Distributed keyword frequency analysis on arXiv AI papers using Hadoop MapReduce
 - `visualize.py` — generate 4 charts from results
 - `Dockerfile` — containerize the web visualization
 - `web/index.html` — results showcase page
-
-## Student
-单义凯 | 1190224121 | AI 2401 | May 2026

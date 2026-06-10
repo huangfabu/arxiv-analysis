@@ -10,6 +10,7 @@ import time
 import os
 from urllib.parse import urlencode
 
+# CL自然语言处理，CV计算机视觉，AI人工智能，LG机器学习，stat.ML统计机器学习
 categories = ['cs.AI', 'cs.LG', 'cs.CL', 'cs.CV', 'stat.ML']
 years = list(range(2012, 2027))   # 2012 到 2026
 papers_per_slot = 100             # 每 (年份, 类别) 最多取 100 篇
